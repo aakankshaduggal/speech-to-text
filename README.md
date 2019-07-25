@@ -1,5 +1,5 @@
 # speech-to-text
-Using DeepSpeech2 - End -to-End Speech Recognition
+Using DeepSpeech2 - End -to-End Speech Recognition by tensorflow
 
 ## How to install
 
