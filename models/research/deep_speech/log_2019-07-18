@@ -1,0 +1,144 @@
+WARNING: Logging before flag parsing goes to stderr.
+W0718 11:08:50.285926 139951743305344 deprecation_wrapper.py:119] From /home/aakankshaduggal/models/research/deep_speech/deep_speech_model.py:26: The name tf.nn.rnn_cell.RNNCell is deprecated. Please use tf.compat.v1.nn.rnn_cell.RNNCell instead.
+
+W0718 11:08:50.289009 139951743305344 deprecation_wrapper.py:119] From deep_speech.py:408: The name tf.logging.set_verbosity is deprecated. Please use tf.compat.v1.logging.set_verbosity instead.
+
+W0718 11:08:50.289113 139951743305344 deprecation_wrapper.py:119] From deep_speech.py:408: The name tf.logging.INFO is deprecated. Please use tf.compat.v1.logging.INFO instead.
+
+W0718 11:08:50.291488 139951743305344 deprecation_wrapper.py:119] From deep_speech.py:215: The name tf.set_random_seed is deprecated. Please use tf.compat.v1.set_random_seed instead.
+
+W0718 11:08:50.300090 139951743305344 deprecation_wrapper.py:119] From deep_speech.py:217: The name tf.logging.info is deprecated. Please use tf.compat.v1.logging.info instead.
+
+I0718 11:08:50.300238 139951743305344 deep_speech.py:217] Data preprocessing...
+W0718 11:08:50.300359 139951743305344 deprecation_wrapper.py:119] From /home/aakankshaduggal/models/research/deep_speech/data/dataset.py:74: The name tf.gfile.Exists is deprecated. Please use tf.io.gfile.exists instead.
+
+I0718 11:08:50.300640 139951743305344 dataset.py:128] Loading data set /tmp/librispeech_data/final_train_dataset.csv
+W0718 11:08:50.300716 139951743305344 deprecation_wrapper.py:119] From /home/aakankshaduggal/models/research/deep_speech/data/dataset.py:129: The name tf.gfile.Open is deprecated. Please use tf.io.gfile.GFile instead.
+
+I0718 11:08:50.300948 139951743305344 dataset.py:128] Loading data set /tmp/librispeech_data/final_eval_dataset.csv
+2019-07-18 11:08:50.301093: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2019-07-18 11:08:50.317412: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2112000000 Hz
+2019-07-18 11:08:50.317832: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x56255f739800 executing computations on platform Host. Devices:
+2019-07-18 11:08:50.317854: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+I0718 11:08:50.318993 139951743305344 run_config.py:558] Initializing RunConfig with distribution strategies.
+I0718 11:08:50.319154 139951743305344 estimator_training.py:167] Not using Distribute Coordinator.
+I0718 11:08:50.319767 139951743305344 estimator.py:209] Using config: {'_model_dir': '/tmp/deep_speech_model/', '_tf_random_seed': None, '_save_summary_steps': 100, '_save_checkpoints_steps': None, '_save_checkpoints_secs': 600, '_session_config': allow_soft_placement: true
+graph_options {
+  rewrite_options {
+    meta_optimizer_iterations: ONE
+  }
+}
+, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 100, '_train_distribute': <tensorflow.python.distribute.one_device_strategy.OneDeviceStrategyV1 object at 0x7f48da0e3ac8>, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7f48da0e3cc0>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1, '_distribute_coordinator_mode': None}
+W0718 11:08:50.320522 139951743305344 logger.py:387] 'cpuinfo' not imported. CPU info will not be logged.
+W0718 11:08:50.320707 139951743305344 logger.py:400] 'psutil' not imported. Memory info will not be logged.
+I0718 11:08:50.423792 139951743305344 logger.py:152] Benchmark run: {'model_name': 'deep_speech', 'dataset': {'name': 'LibriSpeech'}, 'machine_config': {}, 'test_id': None, 'run_date': '2019-07-18T15:08:50.320165Z', 'tensorflow_version': {'version': '1.14.0', 'git_hash': 'v1.14.0-rc1-22-gaf24dc9'}, 'tensorflow_environment_variables': [], 'run_parameters': [{'name': 'batch_size', 'long_value': 128}, {'name': 'is_bidirectional', 'bool_value': 'True'}, {'name': 'rnn_hidden_layers', 'long_value': 5}, {'name': 'rnn_hidden_size', 'long_value': 800}, {'name': 'rnn_type', 'string_value': 'gru'}, {'name': 'train_epochs', 'long_value': 10}, {'name': 'use_bias', 'bool_value': 'True'}]}
+I0718 11:08:50.424365 139951743305344 deep_speech.py:275] Starting a training cycle: 1/10
+W0718 11:08:50.446544 139951743305344 deprecation.py:323] From /home/aakankshaduggal/env/lib64/python3.7/site-packages/tensorflow/python/data/ops/dataset_ops.py:494: py_func (from tensorflow.python.ops.script_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+tf.py_func is deprecated in TF V2. Instead, there are two
+    options available in V2.
+    - tf.py_function takes a python function which manipulates tf eager
+    tensors instead of numpy arrays. It's easy to convert a tf eager tensor to
+    an ndarray (just call tensor.numpy()) but having access to eager tensors
+    means `tf.py_function`s can use accelerators such as GPUs as well as
+    being differentiable using a gradient tape.
+    - tf.numpy_function maintains the semantics of the deprecated tf.py_func
+    (it is not differentiable, and manipulates numpy arrays). It drops the
+    stateful argument making all functions stateful.
+    
+W0718 11:08:50.786837 139951743305344 lazy_loader.py:50] 
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+I0718 11:08:50.825299 139951743305344 estimator.py:1145] Calling model_fn.
+W0718 11:08:50.827069 139951743305344 deprecation.py:323] From /home/aakankshaduggal/models/research/deep_speech/deep_speech_model.py:87: conv2d (from tensorflow.python.layers.convolutional) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.keras.layers.Conv2D` instead.
+W0718 11:08:50.828670 139951743305344 deprecation.py:506] From /home/aakankshaduggal/env/lib64/python3.7/site-packages/tensorflow/python/ops/init_ops.py:1251: calling VarianceScaling.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+W0718 11:08:50.984544 139951743305344 deprecation.py:323] From /home/aakankshaduggal/models/research/deep_speech/deep_speech_model.py:58: batch_normalization (from tensorflow.python.layers.normalization) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.BatchNormalization instead.  In particular, `tf.control_dependencies(tf.GraphKeys.UPDATE_OPS)` should not be used (consult the `tf.keras.layers.batch_normalization` documentation).
+W0718 11:08:51.079884 139951743305344 deprecation.py:323] From /home/aakankshaduggal/models/research/deep_speech/deep_speech_model.py:114: GRUCell.__init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is equivalent as tf.keras.layers.GRUCell, and will be replaced by that in Tensorflow 2.0.
+W0718 11:08:51.080545 139951743305344 deprecation.py:323] From /home/aakankshaduggal/models/research/deep_speech/deep_speech_model.py:121: bidirectional_dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.Bidirectional(keras.layers.RNN(cell))`, which is equivalent to this API
+W0718 11:08:51.080803 139951743305344 deprecation.py:323] From /home/aakankshaduggal/env/lib64/python3.7/site-packages/tensorflow/python/ops/rnn.py:464: dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell)`, which is equivalent to this API
+W0718 11:08:51.128376 139951743305344 deprecation.py:506] From /home/aakankshaduggal/env/lib64/python3.7/site-packages/tensorflow/python/ops/rnn_cell_impl.py:564: calling Constant.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+W0718 11:08:51.139818 139951743305344 deprecation.py:506] From /home/aakankshaduggal/env/lib64/python3.7/site-packages/tensorflow/python/ops/rnn_cell_impl.py:574: calling Zeros.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+W0718 11:08:52.320926 139951743305344 deprecation.py:323] From /home/aakankshaduggal/models/research/deep_speech/deep_speech_model.py:182: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+W0718 11:08:52.600135 139951743305344 deprecation.py:323] From deep_speech.py:67: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+W0718 11:08:52.600895 139951743305344 deprecation_wrapper.py:119] From deep_speech.py:68: The name tf.floordiv is deprecated. Please use tf.math.floordiv instead.
+
+W0718 11:08:52.602003 139951743305344 deprecation.py:323] From deep_speech.py:69: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+W0718 11:08:52.666094 139951743305344 deprecation.py:323] From /home/aakankshaduggal/env/lib64/python3.7/site-packages/tensorflow/python/ops/array_ops.py:1354: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+W0718 11:08:52.690449 139951743305344 deprecation_wrapper.py:119] From deep_speech.py:78: The name tf.log is deprecated. Please use tf.math.log instead.
+
+W0718 11:08:52.692701 139951743305344 deprecation_wrapper.py:119] From deep_speech.py:82: The name tf.nn.ctc_loss is deprecated. Please use tf.compat.v1.nn.ctc_loss instead.
+
+W0718 11:08:52.695409 139951743305344 deprecation_wrapper.py:119] From deep_speech.py:184: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+W0718 11:08:52.695541 139951743305344 deprecation_wrapper.py:119] From deep_speech.py:185: The name tf.train.get_or_create_global_step is deprecated. Please use tf.compat.v1.train.get_or_create_global_step instead.
+
+W0718 11:08:55.642061 139951743305344 deprecation_wrapper.py:119] From deep_speech.py:187: The name tf.get_collection is deprecated. Please use tf.compat.v1.get_collection instead.
+
+W0718 11:08:55.642258 139951743305344 deprecation_wrapper.py:119] From deep_speech.py:187: The name tf.GraphKeys is deprecated. Please use tf.compat.v1.GraphKeys instead.
+
+I0718 11:08:55.643149 139951743305344 estimator.py:1147] Done calling model_fn.
+I0718 11:08:55.724557 139951743305344 basic_session_run_hooks.py:541] Create CheckpointSaverHook.
+I0718 11:08:56.581951 139951743305344 monitored_session.py:240] Graph was finalized.
+W0718 11:08:56.584006 139951743305344 deprecation.py:323] From /home/aakankshaduggal/env/lib64/python3.7/site-packages/tensorflow/python/training/saver.py:1276: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+I0718 11:08:56.584982 139951743305344 saver.py:1280] Restoring parameters from /tmp/deep_speech_model/model.ckpt-0
+2019-07-18 11:08:56.833057: W tensorflow/compiler/jit/mark_for_compilation_pass.cc:1412] (One-time warning): Not using XLA:CPU for cluster because envvar TF_XLA_FLAGS=--tf_xla_cpu_global_jit was not set.  If you want XLA:CPU, either set that envvar, or use experimental_jit_scope to enable XLA:CPU.  To confirm that XLA is active, pass --vmodule=xla_compilation_cache=1 (as a proper command-line flag, not via TF_XLA_FLAGS) or set the envvar XLA_FLAGS=--xla_hlo_profile.
+W0718 11:08:57.168406 139951743305344 deprecation.py:323] From /home/aakankshaduggal/env/lib64/python3.7/site-packages/tensorflow/python/training/saver.py:1066: get_checkpoint_mtimes (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file utilities to get mtimes.
+I0718 11:08:57.291486 139951743305344 session_manager.py:500] Running local_init_op.
+I0718 11:08:57.348152 139951743305344 session_manager.py:502] Done running local_init_op.
+I0718 11:08:59.638526 139951743305344 basic_session_run_hooks.py:606] Saving checkpoints for 0 into /tmp/deep_speech_model/model.ckpt.
+W0718 11:09:02.932914 139951743305344 estimator.py:1487] Training with estimator made no steps. Perhaps input is empty or misspecified.
+I0718 11:09:02.933156 139951743305344 estimator.py:368] Loss for final step: None.
+I0718 11:09:02.933278 139951743305344 deep_speech.py:285] Starting to evaluate...
+I0718 11:09:02.966071 139951743305344 estimator.py:1145] Calling model_fn.
+I0718 11:09:04.083823 139951743305344 estimator.py:1147] Done calling model_fn.
+I0718 11:09:04.287542 139951743305344 monitored_session.py:240] Graph was finalized.
+I0718 11:09:04.288583 139951743305344 saver.py:1280] Restoring parameters from /tmp/deep_speech_model/model.ckpt-0
+I0718 11:09:04.529443 139951743305344 session_manager.py:500] Running local_init_op.
+I0718 11:09:04.543676 139951743305344 session_manager.py:502] Done running local_init_op.
+Traceback (most recent call last):
+  File "deep_speech.py", line 411, in <module>
+    absl_app.run(main)
+  File "/home/aakankshaduggal/env/lib64/python3.7/site-packages/absl/app.py", line 300, in run
+    _run_main(main, args)
+  File "/home/aakankshaduggal/env/lib64/python3.7/site-packages/absl/app.py", line 251, in _run_main
+    sys.exit(main(argv))
+  File "deep_speech.py", line 404, in main
+    run_deep_speech(flags_obj)
+  File "deep_speech.py", line 289, in run_deep_speech
+    eval_speech_dataset.entries, input_fn_eval)
+  File "deep_speech.py", line 125, in evaluate_model
+    total_cer /= num_of_examples
+ZeroDivisionError: division by zero
